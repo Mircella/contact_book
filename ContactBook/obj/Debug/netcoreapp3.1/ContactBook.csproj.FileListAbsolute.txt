@@ -1,0 +1,12 @@
+/Users/liyevgen/RiderProjects/ContactBook/ContactBook/bin/Debug/netcoreapp3.1/ContactBook.deps.json
+/Users/liyevgen/RiderProjects/ContactBook/ContactBook/bin/Debug/netcoreapp3.1/ContactBook.runtimeconfig.json
+/Users/liyevgen/RiderProjects/ContactBook/ContactBook/bin/Debug/netcoreapp3.1/ContactBook.runtimeconfig.dev.json
+/Users/liyevgen/RiderProjects/ContactBook/ContactBook/bin/Debug/netcoreapp3.1/ContactBook.dll
+/Users/liyevgen/RiderProjects/ContactBook/ContactBook/bin/Debug/netcoreapp3.1/ContactBook.pdb
+/Users/liyevgen/RiderProjects/ContactBook/ContactBook/obj/Debug/netcoreapp3.1/ContactBook.csprojAssemblyReference.cache
+/Users/liyevgen/RiderProjects/ContactBook/ContactBook/obj/Debug/netcoreapp3.1/ContactBook.csproj.CoreCompileInputs.cache
+/Users/liyevgen/RiderProjects/ContactBook/ContactBook/obj/Debug/netcoreapp3.1/ContactBook.AssemblyInfoInputs.cache
+/Users/liyevgen/RiderProjects/ContactBook/ContactBook/obj/Debug/netcoreapp3.1/ContactBook.AssemblyInfo.cs
+/Users/liyevgen/RiderProjects/ContactBook/ContactBook/obj/Debug/netcoreapp3.1/ContactBook.dll
+/Users/liyevgen/RiderProjects/ContactBook/ContactBook/obj/Debug/netcoreapp3.1/ContactBook.pdb
+/Users/liyevgen/RiderProjects/ContactBook/ContactBook/obj/Debug/netcoreapp3.1/ContactBook.genruntimeconfig.cache

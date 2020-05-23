@@ -1,0 +1,16 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+.idea/.idea.ContactBook/.idea/.gitignore
+.idea/.idea.ContactBook/.idea/encodings.xml
+.idea/.idea.ContactBook/.idea/indexLayout.xml
+.idea/.idea.ContactBook/.idea/misc.xml
+.idea/.idea.ContactBook/riderModule.iml
+ContactBook.sln
+
