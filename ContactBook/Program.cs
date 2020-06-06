@@ -10,60 +10,67 @@ namespace ContactBook
             string[] options = {"0. Create", "1. Find", "2. Edit", "3. Delete", "4. List all"};
             while (true)
             {
-                listOptions("Select one of the option:", options);
-                int choice = ReadUserInputChoice();
-                switch (choice)
+                try
                 {
-                    case 0:
+                    listOptions("Select one of the option:", options);
+                    int choice = ReadUserInputChoice();
+                    switch (choice)
                     {
-                        createPerson(contactBook);
-                        break;
-                    }
-                    case 1:
-                    {
-                        findPerson(contactBook);
-                        break;
-                    }
-                    case 2:
-                    {
-                        string emailAddress = readInputString("Enter email address");
-                        Person person = contactBook.getPerson(emailAddress);
-                        if (person!=null)
+                        case 0:
                         {
-                            editPerson(person, contactBook);
+                            createPerson(contactBook);
+                            break;
                         }
-                        else
+                        case 1:
                         {
-                            Console.WriteLine($"There is no person with email:{emailAddress}");
+                            findPerson(contactBook);
+                            break;
                         }
-                        break;
-                    }
-                    case 3:
-                    {
-                        deletePerson(contactBook);
-                        break;
-                    }
-                    case 4:
-                    {
-                        var persons = contactBook.listAll();
-                        if (persons!=null && persons.Count > 0)
+                        case 2:
                         {
-                            Console.WriteLine($"Persons:\n");
-                            for (int i = 0; i < persons.Count; i++)
+                            string emailAddress = readInputString("Enter email address");
+                            Person person = contactBook.getPerson(emailAddress);
+                            if (person!=null)
                             {
-                               Console.WriteLine($"{i}:\n{persons[i]}\n");
+                                editPerson(person, contactBook);
                             }
+                            else
+                            {
+                                Console.WriteLine($"There is no person with email:{emailAddress}");
+                            }
+                            break;
                         }
-                        else
+                        case 3:
                         {
-                            Console.WriteLine("There is no persons");
+                            deletePerson(contactBook);
+                            break;
                         }
-                        break;
+                        case 4:
+                        {
+                            var persons = contactBook.listAll();
+                            if (persons!=null && persons.Count > 0)
+                            {
+                                Console.WriteLine($"Persons:\n");
+                                for (int i = 0; i < persons.Count; i++)
+                                {
+                                    Console.WriteLine($"{i}:\n{persons[i]}\n");
+                                }
+                            }
+                            else
+                            {
+                                Console.WriteLine("There is no persons");
+                            }
+                            break;
+                        }
+                        default:
+                        {
+                            throw new ArgumentException("Invalid choice");
+                        }
                     }
-                    default:
-                    {
-                        throw new ArgumentException("Invalid choice");
-                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
                 }
             }
         }

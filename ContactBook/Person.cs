@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace ContactBook
 {
@@ -12,10 +14,10 @@ namespace ContactBook
 
         public Person(string firstName, string lastName, string telephoneNumber, string emailAddress, DateTime dateOfBirth)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.telephoneNumber = telephoneNumber;
-            this.emailAddress = emailAddress;
+            setFirstName(firstName);
+            setLastName(lastName);
+            setTelephoneNumber(telephoneNumber);
+            setEmailAddress(emailAddress);
             this.dateOfBirth = dateOfBirth;
         }
 
@@ -24,6 +26,58 @@ namespace ContactBook
         public string EmailAddress => emailAddress;
 
         public string TelephoneNumber => telephoneNumber;
+
+        private void setTelephoneNumber(string telephoneNumber)
+        {
+            if (telephoneNumber.All(char.IsNumber))
+            {
+                this.telephoneNumber = telephoneNumber;
+            }
+            else
+            {
+                throw new ArgumentException("Invalid telephone number");
+            }
+        }
+        
+        private void setEmailAddress(string emailAddress)
+        {
+            String emailAddressPattern = @"(?i)(\S+)(@{1})(\w+)(.{1})(\w+)$";
+            Regex r = new Regex(emailAddressPattern, RegexOptions.IgnoreCase);
+            if (r.Match(emailAddress).Success)
+            {
+                this.emailAddress = emailAddress;
+            }
+            else
+            {
+                throw new ArgumentException("Invalid email address");
+            }
+        }
+        
+        private void setLastName(string lastName)
+        {
+            if (!String.IsNullOrEmpty(lastName))
+            {
+                this.lastName = lastName;
+            }
+            else
+            {
+                throw new ArgumentException("Invalid last name");
+            }
+        }
+        
+        private void setFirstName(string firstName)
+        {
+            if (!String.IsNullOrEmpty(firstName))
+            {
+                this.firstName = firstName;
+            }
+            else
+            {
+                throw new ArgumentException("Invalid first name");
+            }
+        }
+
+
 
         public string LastName => lastName;
 
